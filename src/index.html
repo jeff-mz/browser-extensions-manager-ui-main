@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frontend Mentor | Browser extensions manager UI</title>
+  <!-- bootstrap style  -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- custom style -->
+  <link rel="stylesheet" href="./style.css">
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <!-- fav icon -->
+  <link rel="shortcut icon" href="./assets/images/favicon-32x32.png" type="image/png">
+</head>
+
+<body>
+  <div class="container-custom py-4">
+    <!-- Header -->
+    <div class="main-header d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center">
+        <img src="./assets/images/logo.svg" alt="logo">
+      </div>
+      <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">
+        <i class="bi bi-moon"></i>
+      </button>
+    </div>
+
+    <!-- Section Title and Filters -->
+    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
+      <h2 class="section-title mb-0">Extensions List</h2>
+      <div class="filter-group mt-3 mt-md-0">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="active">Active</button>
+        <button class="filter-btn" data-filter="inactive">Inactive</button>
+      </div>
+    </div>
+
+    <!-- Extensions Grid -->
+    <div class="row g-4" id="extensionsGrid">
+      <!-- DevLens -->
+      <div class="col-12 col-md-6 col-lg-4 extension-item" data-status="active">
+        <div class="extension-card">
+          <div class="d-flex align-items-start mb-4">
+            <div class="extension-icon bg-blue text-white"><img src="./assets/images/logo-devlens.svg"
+                alt="logo devlens"></div>
+            <div class="flex-grow-1">
+              <h3 class="extension-title">DevLens</h3>
+              <p class="extension-description">Quickly inspect page layouts and visualize element boundaries.</p>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <button class="remove-btn">Remove</button>
+            <div class="toggle-switch active" data-extension="devlens"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- StyleSpy -->
+      <div class="col-12 col-md-6 col-lg-4 extension-item" data-status="active">
+        <div class="extension-card">
+          <div class="d-flex align-items-start mb-4">
+            <div class="extension-icon bg-cyan text-white"><img src="./assets/images/logo-style-spy.svg"
+                alt="logo StyleSpy"></div>
+            <div class="flex-grow-1">
+              <h3 class="extension-title">StyleSpy</h3>
+              <p class="extension-description">Instantly analyze and copy CSS from any webpage element.</p>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <button class="remove-btn">Remove</button>
+            <div class="toggle-switch active" data-extension="stylespy"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SpeedBoost -->
+      <div class="col-12 col-md-6 col-lg-4 extension-item" data-status="inactive">
+        <div class="extension-card">
+          <div class="d-flex align-items-start mb-4">
+            <div class="extension-icon bg-pink text-white"><img src="./assets/images/logo-speed-boost.svg"
+                alt="logo SpeedBoost"></div>
+            <div class="flex-grow-1">
+              <h3 class="extension-title">SpeedBoost</h3>
+              <p class="extension-description">Optimizes browser resource usage to accelerate page loading.</p>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <button class="remove-btn">Remove</button>
+            <div class="toggle-switch" data-extension="speedboost"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- JSONWizard -->
+      <div class="col-12 col-md-6 col-lg-4 extension-item" data-status="active">
+        <div class="extension-card">
+          <div class="d-flex align-items-start mb-4">
+            <div class="extension-icon bg-purple text-white"><img src="./assets/images/logo-json-wizard.svg"
+                alt="logo jsonwizard"></div>
+            <div class="flex-grow-1">
+              <h3 class="extension-title">JSONWizard</h3>
+              <p class="extension-description">Formats, validates, and prettifies JSON responses in-browser.</p>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <button class="remove-btn">Remove</button>
+            <div class="toggle-switch active" data-extension="jsonwizard"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TabMaster Pro -->
+      <div class="col-12 col-md-6 col-lg-4 extension-item" data-status="active">
+        <div class="extension-card">
+          <div class="d-flex align-items-start mb-4">
+            <div class="extension-icon bg-indigo text-white"><img src="./assets/images/logo-tab-master-pro.svg"
+                alt="logo tabmaster"></div>
+            <div class="flex-grow-1">
+              <h3 class="extension-title">TabMaster Pro</h3>
+              <p class="extension-description">Organizes browser tabs into groups and sessions.</p>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <button class="remove-btn">Remove</button>
+            <div class="toggle-switch active" data-extension="tabmaster"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ViewportBuddy -->
+      <div class="col-12 col-md-6 col-lg-4 extension-item" data-status="inactive">
+        <div class="extension-card">
+          <div class="d-flex align-items-start mb-4">
+            <div class="extension-icon bg-blue text-white"><img src="./assets/images/logo-viewport-buddy.svg"
+                alt="logo viewport"></div>
+            <div class="flex-grow-1">
+              <h3 class="extension-title">ViewportBuddy</h3>
+              <p class="extension-description">Simulates various screen resolutions directly within the browser.</p>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <button class="remove-btn">Remove</button>
+            <div class="toggle-switch" data-extension="viewportbuddy"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Markup Notes -->
+      <div class="col-12 col-md-6 col-lg-4 extension-item" data-status="active">
+        <div class="extension-card">
+          <div class="d-flex align-items-start mb-4">
+            <div class="extension-icon bg-teal text-white"><img src="./assets/images/logo-markup-notes.svg"
+                alt="logo markup notes"></div>
+            <div class="flex-grow-1">
+              <h3 class="extension-title">Markup Notes</h3>
+              <p class="extension-description">Enables annotation and notes directly onto webpages for collaborative
+                debugging.</p>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <button class="remove-btn">Remove</button>
+            <div class="toggle-switch active" data-extension="markupnotes"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GridGuides -->
+      <div class="col-12 col-md-6 col-lg-4 extension-item" data-status="inactive">
+        <div class="extension-card">
+          <div class="d-flex align-items-start mb-4">
+            <div class="extension-icon bg-violet text-white"><img src="./assets/images/logo-grid-guides.svg"
+                alt="logo GridGuides"></div>
+            <div class="flex-grow-1">
+              <h3 class="extension-title">GridGuides</h3>
+              <p class="extension-description">Overlay customizable grids and alignment guides on any webpage.</p>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <button class="remove-btn">Remove</button>
+            <div class="toggle-switch" data-extension="gridguides"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Palette Picker -->
+      <div class="col-12 col-md-6 col-lg-4 extension-item" data-status="active">
+        <div class="extension-card">
+          <div class="d-flex align-items-start mb-4">
+            <div class="extension-icon bg-green text-white"><img src="./assets/images/logo-palette-picker.svg"
+                alt="logo palette Picker"></div>
+            <div class="flex-grow-1">
+              <h3 class="extension-title">Palette Picker</h3>
+              <p class="extension-description">Instantly extracts color palettes from any webpage.</p>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <button class="remove-btn">Remove</button>
+            <div class="toggle-switch active" data-extension="palette"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LinkChecker -->
+      <div class="col-12 col-md-6 col-lg-4 extension-item" data-status="active">
+        <div class="extension-card">
+          <div class="d-flex align-items-start mb-4">
+            <div class="extension-icon bg-orange text-white"><img src="./assets/images/logo-link-checker.svg"
+                alt="logo link checker"></div>
+            <div class="flex-grow-1">
+              <h3 class="extension-title">LinkChecker</h3>
+              <p class="extension-description">Scans and highlights broken links on any page.</p>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <button class="remove-btn">Remove</button>
+            <div class="toggle-switch active" data-extension="linkchecker"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DOM Snapshot -->
+      <div class="col-12 col-md-6 col-lg-4 extension-item" data-status="inactive">
+        <div class="extension-card">
+          <div class="d-flex align-items-start mb-4">
+            <div class="extension-icon bg-cyan text-white"><img src="./assets/images/logo-dom-snapshot.svg"
+                alt="logo domsnapshot"></div>
+            <div class="flex-grow-1">
+              <h3 class="extension-title">DOM Snapshot</h3>
+              <p class="extension-description">Capture and export DOM structures quickly.</p>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <button class="remove-btn">Remove</button>
+            <div class="toggle-switch" data-extension="domsnapshot"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ConsolePlus -->
+      <div class="col-12 col-md-6 col-lg-4 extension-item" data-status="active">
+        <div class="extension-card">
+          <div class="d-flex align-items-start mb-4">
+            <div class="extension-icon bg-emerald text-white"><img src="./assets/images/logo-console-plus.svg"
+                alt="logo console plus"></div>
+            <div class="flex-grow-1">
+              <h3 class="extension-title">ConsolePlus</h3>
+              <p class="extension-description">Enhanced developer console with advanced filtering and logging.</p>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <button class="remove-btn">Remove</button>
+            <div class="toggle-switch active" data-extension="consoleplus"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Theme toggle functionality
+    function toggleTheme() {
+      const html = document.documentElement;
+      const themeToggle = document.getElementById('themeToggle');
+      const icon = themeToggle.querySelector('i');
+
+      if (html.getAttribute('data-theme') === 'dark') {
+        html.setAttribute('data-theme', 'light');
+        icon.className = 'bi bi-moon';
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.setAttribute('data-theme', 'dark');
+        icon.className = 'bi bi-sun';
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    // Load saved theme
+    document.addEventListener('DOMContentLoaded', function () {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      const html = document.documentElement;
+      const themeToggle = document.getElementById('themeToggle');
+      const icon = themeToggle.querySelector('i');
+
+      html.setAttribute('data-theme', savedTheme);
+      icon.className = savedTheme === 'dark' ? 'bi bi-sun' : 'bi bi-moon';
+
+      // Filter functionality
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const extensionItems = document.querySelectorAll('.extension-item');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function () {
+          // Remove active class from all buttons
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          // Add active class to clicked button
+          this.classList.add('active');
+
+          const filter = this.getAttribute('data-filter');
+
+          extensionItems.forEach(item => {
+            const status = item.getAttribute('data-status');
+
+            if (filter === 'all') {
+              item.style.display = 'block';
+            } else if (filter === status) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // Toggle switch functionality
+      const toggleSwitches = document.querySelectorAll('.toggle-switch');
+      toggleSwitches.forEach(toggle => {
+        toggle.addEventListener('click', function () {
+          const extensionItem = this.closest('.extension-item');
+
+          if (this.classList.contains('active')) {
+            this.classList.remove('active');
+            extensionItem.setAttribute('data-status', 'inactive');
+          } else {
+            this.classList.add('active');
+            extensionItem.setAttribute('data-status', 'active');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
