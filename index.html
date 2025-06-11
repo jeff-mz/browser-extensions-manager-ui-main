@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frontend Mentor | Browser extensions manager UI</title>
+    <!-- fa icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!-- custom style -->
     <link rel="stylesheet" href="./style.css">
 
@@ -34,7 +37,7 @@
                 <img src="./assets/images/logo.svg" alt="logo">
             </div>
             <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">
-                <i class="bi bi-moon"></i>
+                <i class="fa fa-moon-o"></i>
             </button>
         </div>
 
@@ -290,7 +293,7 @@
                 localStorage.setItem('theme', 'light');
             } else {
                 html.setAttribute('data-theme', 'dark');
-                icon.className = 'bi bi-sun';
+                icon.className = 'fa fa-asterisk';
                 localStorage.setItem('theme', 'dark');
             }
         }
@@ -303,7 +306,7 @@
             const icon = themeToggle.querySelector('i');
 
             html.setAttribute('data-theme', savedTheme);
-            icon.className = savedTheme === 'dark' ? 'bi bi-sun' : 'bi bi-moon';
+            icon.className = savedTheme === 'dark' ? 'fa fa-asterisk' : 'fa fa-moon-o';
 
             // Filter functionality
             const filterButtons = document.querySelectorAll('.filter-btn');
