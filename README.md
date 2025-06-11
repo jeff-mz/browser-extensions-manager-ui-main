@@ -1,11 +1,11 @@
-# Frontend Mentor - Browser extensions manager UI solution
+# 🖥️ Frontend Mentor - Browser Extensions Manager UI Solution
 
 This is a solution to the
-[Browser extensions manager UI challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/browser-extension-manager-ui-yNZnOfsMAp).
+[Browser Extensions Manager UI challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/browser-extension-manager-ui-yNZnOfsMAp).
 Frontend Mentor challenges help you improve your coding skills by building
 realistic projects.
 
-### The challenge
+## ✨ The Challenge
 
 Users should be able to:
 
@@ -17,19 +17,35 @@ Users should be able to:
   size
 - See hover and focus states for all interactive elements on the page
 
-### Screenshot
+## 📸 Screenshot
 
-![alt text](src/assets/design/preview.jpg)
+![preview](assets/design/preview.jpg)
 
-### Links
+## 🔗 Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Solution URL](https://github.com/jeff-mz/browser-extensions-manager-ui-main)
+- [Live Site URL](https://browser-extensions-manager-ui-main-fm89-hz20uyes6.vercel.app/)
 
-### Built with
+## 🛠️ Built With
 
 - Semantic HTML5 markup
 - CSS custom properties
+- Bootstrap 5
 - Flexbox
 - Mobile-first workflow
-- Javascript
+- JavaScript
+
+## 💡 Features
+
+- Modern UI with toggle switches
+- Real-time filtering
+- Dark/Light mode support
+- Fully responsive design
+
+## 🚀 Getting Started
+
+1. Clone the repo:
+
+```bash
+git clone https://github.com/jeff-mz/browser-extensions-manager-ui-main.git
+```
